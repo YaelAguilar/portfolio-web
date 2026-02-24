@@ -26,8 +26,11 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative shrink-0 md:self-start md:mt-2"
           >
+            {/* Animated border glow */}
+            <div className="absolute -inset-1 bg-gradient-to-br from-cyan-500 via-violet-500 to-cyan-500 rounded-full opacity-50 blur-lg animate-pulse" />
+            
             {/* Photo container */}
-            <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-white/[0.03] backdrop-blur-xl overflow-hidden">
+            <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-white/[0.03] backdrop-blur-xl border border-white/10 overflow-hidden">
               <img 
                 src={profilePhoto} 
                 alt="Yael Cruz Aguilar" 

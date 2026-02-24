@@ -41,7 +41,7 @@ export function Navbar() {
               className="text-[1.25rem] tracking-tight text-white"
               style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700 }}
             >
-              YCA
+              YK
               <span className="text-cyan-400">.</span>
             </span>
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-violet-500 group-hover:w-full transition-all duration-300" />
