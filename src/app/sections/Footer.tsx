@@ -20,11 +20,17 @@ export function Footer() {
           className="text-center mb-14"
         >
           <p
-            className="text-[0.875rem] text-gray-600"
+            className="text-[0.875rem] text-gray-600 mb-2"
             style={{ fontFamily: 'JetBrains Mono, monospace', fontWeight: 400 }}
           >
             Contáctame
           </p>
+          <h3
+            className="text-[1.5rem] md:text-[2rem] text-white"
+            style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700 }}
+          >
+            Yael Cruz Aguilar
+          </h3>
         </motion.div>
 
         {/* Contact links */}

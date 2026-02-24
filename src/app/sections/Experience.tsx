@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from 'motion/react';
-import { Briefcase, ExternalLink } from 'lucide-react';
+import { Award, ExternalLink } from 'lucide-react';
 import { SectionHeading } from '../components/SectionHeading';
 import { experiences } from '../../data/experiences';
 import { getTagStyle, getBorderHover } from '../../utils/experienceHelpers';
@@ -10,7 +10,7 @@ export function Experience() {
     <section id="experience" className="relative py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <SectionHeading
-          icon={Briefcase}
+          icon={Award}
           label="Trayectoria"
           title="Experiencia Profesional"
           gradient="from-cyan-400 to-blue-500"
