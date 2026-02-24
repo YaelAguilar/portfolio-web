@@ -65,9 +65,9 @@ export function Hero() {
               style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 400 }}
             >
               2 años de experiencia construyendo aplicaciones backend, plataformas web y
-              sistemas de vision por computadora en entornos productivos. Especializado en{' '}
+              sistemas de visión por computadora en entornos productivos. Especializado en{' '}
               <span className="text-cyan-400">Python</span> y{' '}
-              <span className="text-violet-400">TypeScript</span>, diseno de APIs escalables y
+              <span className="text-violet-400">TypeScript</span>, diseño de APIs escalables y
               despliegue en{' '}
               <span className="text-amber-400">AWS</span>.
             </motion.p>
