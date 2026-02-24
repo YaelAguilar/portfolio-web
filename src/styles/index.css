@@ -3,5 +3,10 @@
 @import './theme.css';
 
 html, body {
+  background-color: #f5f7fa;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark, html.dark body {
   background-color: #06060f;
 }

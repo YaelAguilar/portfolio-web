@@ -31,29 +31,29 @@ export function Experience() {
                 className="relative md:pl-12"
               >
                 {/* Timeline dot */}
-                <div className={`absolute left-0 top-6 w-[23px] h-[23px] rounded-full border-[3px] border-[#0a0a1a] ${exp.dotColor} shadow-lg hidden md:block`} />
+                <div className={`absolute left-0 top-6 w-[23px] h-[23px] rounded-full border-[3px] border-[#f5f7fa] dark:border-[#0a0a1a] ${exp.dotColor} shadow-lg hidden md:block`} />
 
                 <div
-                  className={`group relative bg-white/[0.02] border border-white/[0.06] rounded-2xl p-7 md:p-8 transition-all duration-500 ${getBorderHover(exp.accent)} hover:bg-white/[0.04]`}
+                  className={`group relative bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/[0.06] rounded-2xl p-7 md:p-8 transition-all duration-500 ${getBorderHover(exp.accent)} hover:bg-gray-50 dark:hover:bg-white/[0.04]`}
                 >
                   {/* Header */}
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-5">
                     <div>
                       <h3
-                        className="text-[1.25rem] text-white mb-1"
+                        className="text-[1.25rem] text-gray-900 dark:text-white mb-1"
                         style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 600 }}
                       >
                         {exp.company}
                       </h3>
                       <p
-                        className="text-[0.9rem] text-gray-400"
+                        className="text-[0.9rem] text-gray-600 dark:text-gray-400"
                         style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 400 }}
                       >
                         {exp.role}
                       </p>
                     </div>
                     <span
-                      className="text-[0.75rem] text-gray-600 whitespace-nowrap shrink-0 pt-1"
+                      className="text-[0.75rem] text-gray-400 dark:text-gray-600 whitespace-nowrap shrink-0 pt-1"
                       style={{ fontFamily: 'JetBrains Mono, monospace', fontWeight: 400 }}
                     >
                       {exp.period}
@@ -64,11 +64,11 @@ export function Experience() {
                   <ul className="space-y-3 mb-6">
                     {exp.description.map((item, i) => (
                       <li key={i} className="flex gap-3">
-                        <span className="text-gray-600 mt-1.5 shrink-0">
+                        <span className="text-gray-400 dark:text-gray-600 mt-1.5 shrink-0">
                           <ExternalLink className="w-3 h-3" />
                         </span>
                         <span
-                          className="text-[0.875rem] text-gray-400 leading-relaxed"
+                          className="text-[0.875rem] text-gray-600 dark:text-gray-400 leading-relaxed"
                           style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 400 }}
                         >
                           {item}

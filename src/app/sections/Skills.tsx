@@ -24,14 +24,14 @@ export function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.4, delay: index * 0.08 }}
-              className={`group bg-white/[0.02] border ${category.accentBorder} rounded-2xl p-6 transition-all duration-400 hover:bg-white/[0.04]`}
+              className={`group bg-white dark:bg-white/[0.02] border ${category.accentBorder} rounded-2xl p-6 transition-all duration-400 hover:bg-gray-50 dark:hover:bg-white/[0.04]`}
             >
               <div className="flex items-center gap-3 mb-5">
                 <div className={`p-2 rounded-lg ${category.accentBg} ${category.accentText}`}>
                   <category.icon className="w-5 h-5" />
                 </div>
                 <h3
-                  className="text-[0.9375rem] text-white"
+                  className="text-[0.9375rem] text-gray-900 dark:text-white"
                   style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 600 }}
                 >
                   {category.title}
@@ -41,7 +41,7 @@ export function Skills() {
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 text-[0.75rem] text-gray-400 bg-white/[0.04] border border-white/[0.06] rounded-lg transition-all duration-200 hover:text-white hover:border-white/15 hover:bg-white/[0.07]"
+                    className="px-3 py-1.5 text-[0.75rem] text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-white/[0.04] border border-gray-200 dark:border-white/[0.06] rounded-lg transition-all duration-200 hover:text-gray-900 dark:hover:text-white hover:border-gray-300 dark:hover:border-white/15 hover:bg-gray-200 dark:hover:bg-white/[0.07]"
                     style={{ fontFamily: 'JetBrains Mono, monospace', fontWeight: 400 }}
                   >
                     {skill}

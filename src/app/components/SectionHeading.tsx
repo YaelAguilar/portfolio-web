@@ -35,7 +35,7 @@ export function SectionHeading({
         </span>
       </div>
       <h2
-        className="text-[2rem] md:text-[2.5rem] text-white tracking-tight"
+        className="text-[2rem] md:text-[2.5rem] text-gray-900 dark:text-white tracking-tight"
         style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700 }}
       >
         {title}
