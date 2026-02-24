@@ -31,20 +31,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Get repository name
-        id: repo
-        run: |
-          REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
-          echo "name=$REPO_NAME" >> $GITHUB_OUTPUT
-
       - name: Build
         env:
           GITHUB_PAGES: 'true'
-          REPO_NAME: ${{ steps.repo.outputs.name }}
+          REPO_NAME: 'portfolio-web'
         run: npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
+        with:
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
