@@ -6,6 +6,7 @@ export interface ExperienceItem {
   tags: string[];
   accent: string;
   dotColor: string;
+  demoUrl?: string;
 }
 
 export const experiences: ExperienceItem[] = [
@@ -36,6 +37,7 @@ export const experiences: ExperienceItem[] = [
     tags: ['React', 'TypeScript', 'Node.js', 'Express', 'MySQL', 'Figma'],
     accent: 'violet',
     dotColor: 'bg-violet-400 shadow-violet-400/50',
+    demoUrl: 'https://yaelaguilar.github.io/internship-system-integration-portfolio/',
   },
   {
     company: 'WEBAPI-Odoo',
@@ -50,5 +52,6 @@ export const experiences: ExperienceItem[] = [
     tags: ['Python', 'Flask', 'SQL Server', 'AWS RDS', 'Odoo'],
     accent: 'amber',
     dotColor: 'bg-amber-400 shadow-amber-400/50',
+    demoUrl: 'https://yaelaguilar.github.io/odoo-integration-portfolio/',
   },
 ];

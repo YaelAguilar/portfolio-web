@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from 'motion/react';
-import { Award, ExternalLink } from 'lucide-react';
+import { Award, ExternalLink, ArrowUpRight } from 'lucide-react';
 import { SectionHeading } from '../components/SectionHeading';
 import { experiences } from '../../data/experiences';
 import { getTagStyle, getBorderHover } from '../../utils/experienceHelpers';
@@ -78,7 +78,7 @@ export function Experience() {
                   </ul>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {exp.tags.map((tag) => (
                       <span
                         key={tag}
@@ -89,6 +89,20 @@ export function Experience() {
                       </span>
                     ))}
                   </div>
+
+                  {/* Demo Button */}
+                  {exp.demoUrl && (
+                    <a
+                      href={exp.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-violet-500 dark:from-cyan-400 dark:to-violet-400 text-white rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25 dark:hover:shadow-cyan-400/25 hover:scale-[1.02]"
+                      style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 500 }}
+                    >
+                      <span className="text-[0.875rem]">Ver Demo</span>
+                      <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))}
