@@ -12,7 +12,7 @@ export const experiences: ExperienceItem[] = [
   {
     company: 'Yazaki',
     role: 'Sistema de inspeccion visual | Desarrollador ML/Fullstack',
-    period: 'Sep. 2025 - Presente',
+    period: '2025 - 2026',
     description: [
       'Desarrolle e implemente un sistema de inspeccion visual en produccion en 2 plantas de manufactura, reduciendo la inspeccion manual y mejorando la deteccion de defectos en tiempo real.',
       'Disene una aplicacion multi-camara en Python y OpenCV para procesamiento de imagenes en tiempo real y una plataforma web en Django para trazabilidad y analisis historico.',
@@ -26,7 +26,7 @@ export const experiences: ExperienceItem[] = [
   {
     company: 'Universidad Politecnica de Chiapas',
     role: 'ConectaUP | Desarrollador FullStack',
-    period: 'Abr. 2025 - Ene. 2026',
+    period: '2025 - 2026',
     description: [
       'Lidere el desarrollo end-to-end de una plataforma para la gestion de practicas profesionales, desde levantamiento de requerimientos y diseno en Figma hasta despliegue en produccion.',
       'Disene un backend escalable con Node.js, Express, TypeScript y MySQL aplicando Arquitectura Hexagonal con separacion de dominio e infraestructura, incluyendo autenticacion JWT y sistema RBAC.',
@@ -40,7 +40,7 @@ export const experiences: ExperienceItem[] = [
   {
     company: 'ATI Asesores',
     role: 'WEBAPI-Odoo | Desarrollador Backend',
-    period: 'Abr. 2024 - Jun. 2024',
+    period: '2024',
     description: [
       'Desarrolle una API REST en Python y Flask para integrar Odoo ERP con Microsoft SQL Server, sincronizando en tiempo real clientes, facturas y asientos contables.',
       'Implemente un pipeline ETL con logica de upsert para garantizar consistencia y evitar duplicados en procesos de sincronizacion.',
