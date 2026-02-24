@@ -64,7 +64,7 @@ export function Hero() {
               className="text-[1.125rem] md:text-[1.25rem] text-gray-400 max-w-2xl leading-relaxed mb-12"
               style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 400 }}
             >
-              Con 2 anos de experiencia construyendo aplicaciones backend, plataformas web y
+              2 años de experiencia construyendo aplicaciones backend, plataformas web y
               sistemas de vision por computadora en entornos productivos. Especializado en{' '}
               <span className="text-cyan-400">Python</span> y{' '}
               <span className="text-violet-400">TypeScript</span>, diseno de APIs escalables y
