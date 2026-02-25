@@ -23,6 +23,7 @@ export const experiences: ExperienceItem[] = [
     tags: ['Python', 'Numpy', 'Pandas', 'OpenCV', 'YOLO', 'Django', 'AWS EC2', 'AWS S3', 'SQLite'],
     accent: 'cyan',
     dotColor: 'bg-cyan-400 shadow-cyan-400/50',
+    demoUrl: 'https://yaelaguilar.github.io/visual-inspection-integration-portfolio/',
   },
   {
     company: 'Sistema para gestión de pasantías',
