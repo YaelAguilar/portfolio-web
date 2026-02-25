@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion } from 'motion/react';
 import { Award, ExternalLink, ArrowUpRight } from 'lucide-react';
 import { SectionHeading } from '../components/SectionHeading';
@@ -6,6 +6,72 @@ import { experiences } from '../../data/experiences';
 import { getTagStyle, getBorderHover } from '../../utils/experienceHelpers';
 
 export function Experience() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const experienceRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [dotPosition, setDotPosition] = useState(0);
+
+  useEffect(() => {
+    const updateActiveExperience = () => {
+      const viewportCenter = window.innerHeight / 2;
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+
+      experienceRefs.current.forEach((ref, index) => {
+        if (!ref) return;
+
+        const rect = ref.getBoundingClientRect();
+        const elementCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(elementCenter - viewportCenter);
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      setActiveIndex(closestIndex);
+
+      // Calcular posición del dot
+      const activeRef = experienceRefs.current[closestIndex];
+      const container = containerRef.current;
+      if (activeRef && container) {
+        const containerRect = container.getBoundingClientRect();
+        const activeRect = activeRef.getBoundingClientRect();
+        const relativeTop = activeRect.top - containerRect.top;
+        // top-6 = 24px (1.5rem), ajustamos para alinear el dot con el card
+        setDotPosition(relativeTop + 24); // 24px es el top-6
+      }
+    };
+
+    // Throttle para mejor rendimiento
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateActiveExperience();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Inicializar después de que el DOM esté listo
+    const initTimeout = setTimeout(() => {
+      updateActiveExperience();
+    }, 100);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(initTimeout);
+    };
+  }, []);
+
+  const activeExperience = experiences[activeIndex];
+  const activeDotColor = activeExperience?.dotColor || 'bg-cyan-400 shadow-cyan-400/50';
+
   return (
     <section id="experience" className="relative py-24 px-6">
       <div className="max-w-5xl mx-auto">
@@ -16,22 +82,30 @@ export function Experience() {
           gradient="from-cyan-400 to-blue-500"
         />
 
-        <div className="relative">
+        <div ref={containerRef} className="relative">
           {/* Timeline line */}
           <div className="absolute left-[11px] top-4 bottom-4 w-px bg-gradient-to-b from-cyan-500/40 via-violet-500/40 to-amber-500/40 hidden md:block" />
+
+          {/* Single animated dot */}
+          <motion.div
+            className={`absolute left-0 w-[23px] h-[23px] rounded-full border-[3px] border-[#f5f7fa] dark:border-[#0a0a1a] ${activeDotColor} shadow-lg hidden md:block z-10`}
+            animate={{ top: dotPosition }}
+            transition={{ type: 'spring', stiffness: 200, damping: 25 }}
+          />
 
           <div className="space-y-8">
             {experiences.map((exp, index) => (
               <motion.div
                 key={exp.company}
+                ref={(el) => {
+                  experienceRefs.current[index] = el;
+                }}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 className="relative md:pl-12"
               >
-                {/* Timeline dot */}
-                <div className={`absolute left-0 top-6 w-[23px] h-[23px] rounded-full border-[3px] border-[#f5f7fa] dark:border-[#0a0a1a] ${exp.dotColor} shadow-lg hidden md:block`} />
 
                 <div
                   className={`group relative bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/[0.06] rounded-2xl p-7 md:p-8 transition-all duration-500 ${getBorderHover(exp.accent)} hover:bg-gray-50 dark:hover:bg-white/[0.04]`}
