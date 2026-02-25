@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Navbar } from './components/Navbar';
 import { GridBackground } from './components/GridBackground';
 import { Hero } from './sections/Hero';
@@ -8,6 +8,10 @@ import { Footer } from './sections/Footer';
 import { ThemeProvider } from '../hooks/useTheme';
 
 export default function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <ThemeProvider>
       <div
